@@ -1,0 +1,46 @@
+@import "common.less";
+
+.erie-success {
+  .bg-img {
+    display: block;
+    font-size: 0;
+    margin-top: -2px;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .position-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  header {
+    display: flex;
+    width: 100vw;
+    .header-lf {
+      flex: 8;
+    }
+    .header-ml {
+      flex: 1.787;
+      margin-left: -1px;
+    }
+    .header-rf {
+      flex: .2135;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    .success-txt {
+      .position-middle;
+      width: 82vw;
+      padding: 4vw;
+      font-size: 1.2rem;
+      color: #66563f;
+      line-height: 1.5rem;
+    }
+  }
+}

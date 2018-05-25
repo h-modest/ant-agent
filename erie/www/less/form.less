@@ -1,0 +1,143 @@
+@import "common.less";
+
+.erie-form {
+  .bg-img {
+    display: block;
+    font-size: 0;
+    margin-top: -2px;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .position-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  header {
+    display: flex;
+    width: 100vw;
+    .header-lf {
+      flex: 8;
+    }
+    .header-ml {
+      flex: 1.803;
+      margin-left: -1px;
+    }
+    .header-rf {
+      flex: 0.2139;
+    }
+  }
+  .content {
+    .countdown {
+      .position-middle;
+      color: @erie-form-main;
+      border: 1px solid @eria-form-date-bd;
+      padding: 1rem .6rem;
+      .title {
+        position: absolute;
+        top: -.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1.6rem;
+        text-align: center;
+        line-height: 1.6rem;
+        font-size: .9rem;
+        background: @eria-form-bg;
+      }
+      .detail {
+        font-size: 1.2rem;
+        .date {
+          display: inline-block;
+          width: 2rem;
+          height: 2rem;
+          text-align: center;
+          line-height: 2rem;
+          background: @eria-form-date-bg;
+          -webkit-box-shadow:0 0 2px #ad956b inset;
+          -moz-box-shadow:0 0 2px #ad956b inset;
+          box-shadow:0 0 2px #ad956b inset;
+          color: @eria-form-date;
+        }
+        .date-txt {
+          margin-left: .2rem;
+          margin-right: .4rem;
+          &.txt-last {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .win-msg {
+      .position-middle;
+      font-size: 1.2rem;
+      width: 86vw;
+      padding: 0 2vw;
+      height: 4.5rem;
+      color: @erie-form-main;
+      overflow: hidden;
+      ul {
+        position: relative;
+        li {
+          .text-overflow;
+          margin-bottom: .4rem;
+        }
+      }
+    }
+    .set-form {
+      .position-middle;
+      font-size: 1rem;
+      color: @erie-form-main;
+      width: 80vw;
+      padding: 0 5vw;
+      .tip {
+        font-size: .8rem;
+        margin-bottom: 1.5rem;
+      }
+      .form-control {
+        margin-bottom: .8rem;
+        input {
+          width: 92%;
+          height: 2rem;
+          padding: .4rem 4%;
+        }
+      }
+      .btn-submit {
+        font-size: 1.5rem;
+        background: -webkit-linear-gradient(#ffdd27,#ffc217);
+        background: -o-linear-gradient(#ffdd27,#ffc217);
+        background: -moz-linear-gradient(#ffdd27,#ffc217);
+        background: -mos-linear-gradient(#ffdd27,#ffc217);
+        background: linear-gradient(#ffdd27,#ffc217);
+        height: 2.8rem;
+        width: 100%;
+        text-align: center;
+        line-height: 2.8rem;
+        border-radius: 1.4rem;
+      }
+      .remark {
+        margin-top: .5rem;
+      }
+    }
+  }
+  .modal {
+    position: fixed;
+    z-index: 999;
+    bottom: -6rem;
+    width: 92vw;
+    padding: 1rem 4vw;
+    background: rgba(0,0,0,.8);
+    color: @white;
+    transition: bottom .3s ease-in-out;
+    &.hover {
+      bottom: 0;
+    }
+    .title {
+      font-size: 1.7rem;
+      margin-bottom: .3rem;
+    }
+  }
+}

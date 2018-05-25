@@ -1,0 +1,215 @@
+@import "common.less";
+
+@font-face{
+    font-family: 'FZLTDH';
+    src : url('../fonts/方正兰亭大黑_GBK.TTF');
+}
+
+@font-face{
+    font-family: 'FZLTXH';
+    src : url('../fonts/方正兰亭纤黑_GBK.TTF');
+}
+
+.erie-rule {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  &.hover {
+    .rule-content {
+      transform: translate(-50%,-50%) scale(1);
+    }
+    .modal-close {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  .position-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .modal-shadow {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.6);
+  }
+  .rule-content {
+    position: relative;
+    background: @erie-rule-bg;
+    .position-middle;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 5vw;
+    transform: translate(-50%,-50%) scale(.5);
+    transition: transform .2s ease-in-out;
+    header {
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'FZLTDH';
+      height: 3rem;
+      width: 8rem;
+      font-size: 1.7rem;
+      text-align: center;
+      .title {
+        height: 3rem;
+        width: 8rem;
+        line-height: 3rem;
+        background: @erie-rule-bg;
+        box-shadow: 0 .4rem 0 #dfbe0d;
+        z-index: 100;
+      }
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: .39rem;
+        display: block;
+        width: 2.2rem;
+        height: 2.2rem;
+        background: @erie-rule-bg;
+        transform: rotate(45deg);
+        z-index: -1;
+        border-radius: .2rem;
+      }
+      &::before {
+        left: -1rem;
+        box-shadow: .17rem .4rem 0 #dfbe0d;
+      }
+      &::after {
+        right: -1rem;
+        box-shadow: .4rem .17rem 0 #dfbe0d;
+      }
+    }
+    .content {
+      padding: 5vh 1.5rem;
+      height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-align: center;
+      .remark {
+        font-family: 'FZLTXH';
+      }
+      .title {
+        width: 49vw;
+        height: 7vw;
+        background-image: url('../images/rule/rule-icon.png');
+        background-size: cover;
+        font-size: 1.7rem;
+        color: @erie-rule-color;
+        font-family: 'FZLTDH';
+        line-height: 7vw;
+        margin: .8rem auto;
+      }
+      .description {
+        margin-bottom: .5rem;
+        .main-remark {
+          font-size: 1.2rem;
+        }
+        .sub-remark {
+          font-family: 'FZLTXH';
+        }
+        &.bold {
+          font-size: 1.4rem;
+        }
+      }
+      .area {
+        width: 100%;
+        background: @white;
+        line-height: 1.5rem;
+        border-radius: .8rem;
+        .area-title {
+          font-size: 1.6rem;
+          background: rgba(255,225,66,.6);
+          padding: .6rem 0;
+          border-top-left-radius: .8rem;
+          border-top-right-radius: .8rem;
+        }
+        .area-content {
+          text-align: left;
+          padding: 1rem .5rem;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          .sub-content {
+            font-size: 1rem;
+            font-family: 'FZLTXH';
+          }
+        }
+      }
+      .explain {
+        padding: 1rem .5rem;
+        font-size: 1.2rem;
+      }
+      .explain, .area .area-content {
+        text-align: left;
+        ul {
+          &.sub-tab {
+            li {
+              .base-num .num {
+                background: @white;
+                color: @erie-rule-bg;
+                margin: 0 auto;
+              }
+            }
+          }
+          li {
+            display: flex;
+            margin-bottom: .2rem;
+            .base-num {
+              width: 2rem;
+              text-align: center;
+              .num {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: .9rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background: @erie-rule-bg;
+                color: @white;
+                margin: .2rem auto;
+              }
+            }
+            .base-content {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .modal-close {
+    position: fixed;
+    left: 50%;
+    bottom: 2.5vh;
+    transform: translateX(-50%) scale(.5);
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background: @erie-rule-bg;
+    z-index: 999;
+    transition: transform .2s ease-in-out;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: block;
+      height: 2px;
+      width: 3.5vh;
+      background: rgba(0,0,0,.6);
+    }
+    &::before {
+      left: .8vh;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &::after {
+      right: .8vh;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}
